@@ -1,0 +1,613 @@
+/* 全体のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    width: 100%;
+    overflow-x: hidden; /* 横スクロールを無効化 */
+}
+
+/* コンテナ設定 */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    padding-top: 10px;
+}
+
+.logo img {
+    width: 150px; /* ロゴのサイズを小さく */
+    height: auto; /* 縦横比を維持 */
+}
+
+/* ヘッダーセクション */
+header {
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 画像を常に画面幅100%にする */
+header img,
+.cta .discount-info img {
+    width: 100%;
+    height: auto;
+    display: block; /* 画像の隙間をなくすため */
+}
+
+/* CTAセクション */
+.cta {
+    background-color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.cta .arrow {
+    font-size: 2em;
+    margin: 20px 0;
+    color: #333;
+}
+
+.cta .discount-info img:last-of-type {
+    cursor: pointer; /* 画像をクリック可能に見せる */
+}
+
+/* ステップセクション */
+.steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.steps img {
+    display: block; /* 画像間の余白をなくすために block に変更 */
+    margin: 0;      /* デフォルトの余白をなくす */
+    padding: 0;     /* デフォルトのパディングをなくす */
+    width: 100%;
+    height: auto;
+}
+
+/* ランキングセクション */
+.ranking {
+    display: flex;
+    justify-content: center;  /* 水平方向の中央揃え */
+    align-items: center;      /* 垂直方向の中央揃え */
+    background-color: #81D8D0; 
+}
+
+.ranking img {
+    max-width: 100%;          /* 画像が親要素の幅に収まるようにする */
+    height: auto;             /* 縦横比を維持 */
+}
+
+/* 親要素（ranking-container）にグリッドレイアウトを適用 */
+.ranking-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 横に2列を設定 */
+    gap: 10px; /* 画像間に余白を設定 */
+    justify-items: center; /* 各画像を中央揃え */
+    background-color: #81D8D0; 
+    padding: 20px; /* 背景色が見えるように余白を追加 */
+}
+
+/* 画像のスタイル */
+.ranking-container img {
+    width: 100%; /* 画像をコンテナ幅いっぱいに広げる */
+    height: auto; /* 縦横比を維持 */
+    border-radius: 10px; /* 角を少し丸める */
+}
+
+
+.info-text {
+    text-align: center; /* テキストの中央揃え */
+    margin: 0 auto;     /* 親要素内で中央に配置 */
+    max-width: 100%;   /* 必要に応じて最大幅を指定（オプション） */
+    background-color: #81D8D0;
+    color: white;   
+}
+
+/* 支払い情報セクション */
+.payment-info-section {
+    background-color: #81D8D0;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.payment-info-container {
+    border: 2px solid black; /* 黒い枠線を2pxで指定 */
+    background-color: white; /* 背景色を白に設定 */
+    padding: 20px;           /* コンテンツ周りに余白を設定 */
+    border-radius: 10px;      /* 角を少し丸める（オプション） */
+     width: 100%;          /* コンテナを親要素の幅に対応させる */
+    max-width: 600px;     /* コンテナの最大幅を600pxに固定 */
+    margin: 0 auto;       /* 中央揃え */
+    text-align: center;   
+}
+
+.payment-title {
+    font-size: 24px;
+    color: #c83d3d;
+    margin-bottom: 10px;
+}
+
+.payment-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.payment-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.payment-option img {
+    width: 80px;
+    height: auto;
+}
+
+.now-section {
+    background-color: #81D8D0;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.now-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background-color: #81D8D0;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    z-index: 1;
+}
+
+.now-section h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    z-index: 2;
+    border-bottom: 2px solid white;
+    background-color: transparent; /* 背景を透明にして、余計なスタイルが適用されないように */
+}
+
+/* プロモーションセクション */
+.promo-section img {
+    width: 100%;   /* 画像の幅を100%に設定 */
+    height: auto;  /* アスペクト比を維持しながら高さを自動調整 */
+    display: block; /* 画像の隙間をなくすために block に変更 */
+}
+
+/* ベネフィットセクション */
+.benefits-container {
+    display: flex;
+    flex-direction: column; /* 要素を縦に並べる */
+    align-items: center;    /* 要素を中央揃え */
+    padding: 40px;
+    border-radius: 20px; /* 角を丸くする */
+    margin: 0 auto;
+    max-width: 900px; /* 幅を900pxに制限し中央に配置 */
+}
+
+.benefit-item h2 {
+    color: white; /* 文字色を白に設定 */
+    background-color: #81D8D0; /* 背景色をティファニーブルーに設定 */
+    padding: 10px; /* 上下左右に余白を追加 */
+    border-radius: 10px; /* 角を丸くする */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.benefit-item p {
+    color: white; /* pタグの文字色を白に設定 */
+}
+
+.highlight-yellow {
+    color: yellow; /* 文字色を黄色に設定 */
+    font-size: 1.5em; /* 文字サイズを大きく設定 (1.5倍に調整) */
+    font-weight: bold; /* 太字にする (オプション) */
+}
+
+.benefit-item {
+    width: 90%; /* 横幅を90%にして画面幅に合わせる */
+    background-color: #81D8D0;
+    border-radius: 20px; /* 角を丸くする */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影をつける */
+    padding: 20px;
+    margin-bottom: 20px; /* 項目間の余白を設定 */
+    text-align: center;
+}
+
+.benefit-header {
+    background-color: #81D8D0; /* ヘッダー部分をティファニーブルーに設定 */
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #f8f8f8;
+    margin-bottom: 20px;
+}
+
+.benefit-item img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.benefit-description {
+    font-size: 14px;
+    color: #666;
+}
+
+.benefit-description small {
+    font-size: 14px;
+    color: #666;
+}
+
+.highlight {
+    font-size: 20px;
+    color: #FFDD44; /* 強調部分を黄色に設定 */
+    font-weight: bold;
+}
+
+/* 顧客の声セクション */
+.testimonial-container img {
+    width: 100%;   /* 画像の幅を100%に設定 */
+    height: auto;  /* 高さを自動で調整して縦横比を維持 */
+}
+
+/* FAQのスタイル */
+.faq-section {
+    width: 48%;
+    max-width: 600px; /* 適切な幅を設定 */
+    margin: auto; /* 中央寄せ */
+    border: 2px solid  #81D8D0; /* 赤い枠線を追加 */
+}
+
+.faq-title {
+    background-color:  #81D8D0; /* ダークレッド */
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.faq-item {
+    background-color: #FAFAFA; /* ライトグレー */
+    border-bottom: 2px solid  #81D8D0; /* 赤いボーダー */
+}
+
+.question, .answer {
+    padding: 15px;
+    margin: 0;
+}
+
+.question {
+    background-color: #EEEEEE; /* やや濃いグレー */
+    font-weight: bold;
+}
+
+.answer {
+    background-color: #FFFFFF; /* ホワイト */
+}
+
+.image-container1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* お問合せスタイル */
+.form-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 20px auto; /* 中央寄せ */
+}
+
+/* ラベル */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+    font-weight: bold;
+}
+
+/* 入力フィールド */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* パディングを幅に含める */
+    margin-bottom: 20px;
+}
+
+/* 特別な入力フィールド（ラジオボタン） */
+form input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* テキストエリア */
+form textarea {
+    height: 120px; /* 適切な高さ */
+}
+
+/* チェックボックスラベル */
+form label input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* 送信ボタン */
+form button {
+    background-color: #007BFF; /* 青色 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background-color: #0056b3; /* 濃い青色に変更 */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: red;
+    font-weight: bold;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="text"]:disabled {
+    background-color: #f9f9f9;
+}
+
+label small {
+    display: block; /* `small`要素をブロック表示に変更 */
+    margin-top: 10px; /* `small`要素の上に余白を追加 */
+    font-size: 10px; /* 小さめの文字サイズを指定（必要に応じて変更） */
+    color: #000; /* テキストを黒に設定 */
+    text-decoration: underline; /* 下線を追加 */
+    text-decoration-color: #000; /* 下線の色を黒に指定 */
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+}
+
+.error-message {
+    font-size: 14px; /* 通常時の文字サイズ */
+    white-space: nowrap; /* 改行を防ぐ */
+}
+
+.required-label {
+    background-color: red; /* 背景色を赤に設定 */
+    color: white; /* テキスト色を白に */
+    padding: 3px 6px; /* ラベル内の余白 */
+    border-radius: 4px; /* 角を丸く */
+    font-size: 12px; /* 小さめのフォントサイズ */
+    margin-right: 10px; /* ラベルとテキストの間に余白 */
+    white-space: nowrap;
+}
+
+.optional-label {
+    background-color: #f0f0f0; /* グレーの背景色 */
+    color: #666; /* テキストの色 */
+    padding: 3px 6px; /* 内側の余白 */
+    border-radius: 4px; /* 角を少し丸く */
+    font-size: 12px; /* 小さめのフォントサイズ */
+    margin-right: 10px; /* ラベルと文字の間の余白 */
+}
+
+select {
+    cursor: pointer;
+}
+
+.model-interest label {
+    display: block; /* ラベルをブロックレベルで表示 */
+    margin: 5px 0; /* 上下に余白を設ける */
+}
+
+#model_details {
+    margin-top: 10px; /* 詳細入力フィールドの上の余白 */
+}
+
+#model_details input[type="text"] {
+    width: 100%; /* 入力フィールドを広げる */
+    padding: 8px; /* 入力しやすくするためのパディング */
+    box-sizing: border-box; /* パディングを含めた幅で計算 */
+}
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 会社説明セクション */
+.company-description {
+    display: flex;
+    justify-content: center; /* 水平方向に中央揃え */
+    align-items: center; /* 垂直方向に中央揃え */
+    padding: 20px; /* 少し余白を追加 */
+    text-align: center; /* テキストを中央寄せ */
+}
+
+.image-container {
+    margin-right: 40px; /* テキストとの間に余白を追加 */
+}
+
+.image-container img {
+    border-radius: 10px; /* 画像の角を丸める */
+    box-shadow: 10px 10px 0 rgba(129, 216, 208, 1); /* はっきりした影 */
+}
+
+.text-container p {
+    max-width: 600px; /* テキストの幅を調整 */
+    line-height: 1.6; /* 行間を調整して読みやすくする */
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+
+.text-container {
+    max-width: 600px;
+    text-align: left;
+}
+
+/* フッター */
+.footer {
+    padding: 10px 0;
+    background-color: white;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.contact-button-container {
+    position: fixed;
+    bottom: 0;       /* 下端に配置 */
+    left: 0;         /* 左端に配置 */
+    width: 100%; /* 画面幅いっぱい */
+}
+
+.contact-button-container img {
+    width: 100%; /* 画像を画面幅いっぱいに */
+    height: auto; /* 縦横比を維持 */
+}
+
+.clickable-area {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 10; /* 画像の上に重なるように */
+}
+
+/* 左25%のリンクエリア */
+.left-area {
+    left: 0;
+    width: 25%;
+}
+
+/* 中央50%のリンクエリア */
+.center-area {
+    left: 25%;
+    width: 25%;
+}
+
+/* 右25%のリンクエリア */
+.right-area {
+    right: 0;
+    width: 50%;
+}
+
+
+/* 矢印の基本スタイル */
+.arrow {
+    font-size: 1.5em; /* 矢印のサイズを少し小さくする */
+    margin: 2px 0;    /* 上下の余白を小さくする */
+    padding: 0;       /* パディングをゼロに */
+    color: #333;
+    text-align: center;
+    display: inline-block; /* 要素の幅をコンテンツに合わせる */
+    width: 100%; /* 矢印を親要素の幅にフィットさせる */
+    overflow: hidden;
+    transition: transform 0.3s ease; /* アニメーションのスムーズな効果 */
+}
+
+.discount-info {
+    position: relative; /* 矢印を中央に配置するための基準 */
+    overflow: hidden; /* アニメーション中に矢印がはみ出ないようにする */
+    text-align: center; /* 中央揃え */
+}
+/* 上の矢印と下の矢印を区別するために、特定のクラスを追加 */
+.arrow.top {
+    animation: growShrink 1s ease-in-out infinite; /* アニメーションを無限に繰り返す */
+    color: #d9534f;
+    line-height: 0.8; /* 矢印の上下の間隔を縮める */
+    margin: 0; /* デフォルトの余白を削除 */
+    padding: 0; /* デフォルトのパディングを削除 */
+    line-height: 0.6; /* 行の高さを狭くする */
+}
+
+.arrow.top small,
+.arrow.top big {
+    margin: 0;
+    padding: 0;
+    line-height: 0.6; /* 各要素の行の高さを狭く */
+}
+
+.arrow.top small {
+    font-size: 12px; /* 小さい矢印のサイズを指定 */
+}
+
+.arrow.top big {
+    font-size: 16px; /* 大きい矢印のサイズを指定 */
+}
+
+/* 矢印が大きくなって小さくなるアニメーション */
+@keyframes growShrink {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.5,1); /* 大きくなる */
+    }
+    100% {
+        transform: scale(1),1; /* 元に戻る */
+    }
+}
+
